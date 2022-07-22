@@ -1,0 +1,27 @@
+server:
+  port: 8766
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/menu?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    # 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: delFlag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto
+weixin:
+  jscode2sessionUrl: https://api.weixin.qq.com/sns/jscode2session
+  appid: wx3cc31e9c91200647
+  appsecret: 91f3c40379d743a5095e1ae3c1602d99
+oss:
+  accessKey: x4BpEuDvG4oTIm888whRpdAQuIVkoAvFCbXpAwPL
+  secretKey: XHMfcQrYZUibrdHUEdU-g7J3GY5t2qHUiD-6UFzI
+  bucket: wechatgood
